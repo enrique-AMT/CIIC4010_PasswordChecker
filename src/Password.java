@@ -16,14 +16,14 @@ public class Password {
 	public String getText(){return string;}
 
 	public boolean longEnough(int i) {
-		// TODO Auto-generated method stub
 		
-		return ((this.getText().length())>=i); //dummy return to avoid compiler error
+		
+		return ((this.getText().length())>=i); 
 		
 	}
 
 	public boolean containsOneOf(String string) {
-		// TODO Auto-generated method stub
+		
 		
 				for(int i=0;i<this.getText().length();i++){
 					for(int j=0;j<string.length();j++){
@@ -39,22 +39,22 @@ public class Password {
 	}
 
 	public boolean containsNoneOf(String string) {
-		// TODO Auto-generated method stub
-		return !this.containsOneOf(string); //dummy return to avoid compiler error
+		
+		return !this.containsOneOf(string); 
 	}
 
 	public boolean containsUpperCase() {
-		// TODO Auto-generated method stub
+		
 		return(!(this.getText().toLowerCase().equals(this.getText())));
 	}
 
 	public boolean containsLowerCase() {
-		// TODO Auto-generated method stub
-		return (!this.getText().toUpperCase().equals(this.getText())); //dummy return to avoid compiler error
+		
+		return (!this.getText().toUpperCase().equals(this.getText())); 
 	}
 
 	public int safetyLevel() {
-		// TODO Auto-generated method stub
+		
 		if(this.longEnough(10)&&this.containsNoneOf("./")&&this.containsLowerCase()&&this.containsUpperCase()&&this.containsOneOf("!@#$%^&*()")&&this.containsOneOf("1234567890")){
 			return Password.STRONG;
 		}
