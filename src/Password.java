@@ -56,15 +56,15 @@ public class Password {
 	public int safetyLevel() {
 		
 		if(this.longEnough(10)&&this.containsNoneOf("./")&&this.containsLowerCase()&&this.containsUpperCase()&&this.containsOneOf("!@#$%^&*()")&&this.containsOneOf("1234567890")){
-			return Password.STRONG;
+			return STRONG;
 		}
 		else if(this.longEnough(8)&&this.containsNoneOf("./")&&this.containsLowerCase()&&this.containsUpperCase()&&this.containsOneOf("1234567890")){
-			return Password.MEDIUM;
+			return MEDIUM;
 		}
 		else if(this.longEnough(8)&&this.containsNoneOf("./")&&this.containsLowerCase()||this.containsUpperCase()&&this.containsOneOf("1234567890")){
-			return Password.WEAK;
+			return WEAK;
 		}
-		return Password.INVALID;
+		return INVALID;
 	}
 
 }
